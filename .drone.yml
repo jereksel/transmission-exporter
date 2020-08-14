@@ -31,7 +31,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: metalmatze/transmission-exporter
+    repo: jereksel/transmission-exporter
     tags:
     - master
   when:
@@ -39,22 +39,5 @@ steps:
     - master
     event:
     - push
-
-- name: docker-tag
-  pull: always
-  image: plugins/docker
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    repo: metalmatze/transmission-exporter
-    tag:
-    - 0.3
-    - 0.3.0
-    - latest
-  when:
-    event:
-    - tag
 
 ...
